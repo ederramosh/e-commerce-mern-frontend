@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignUpPage = () => {
+const SignUpPage = ({ guardarToken }) => {
   return (
     <div>SignUpPage</div>
   )

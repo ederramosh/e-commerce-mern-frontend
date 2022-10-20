@@ -1,18 +1,29 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../Context/UserContext";
 
 import { login } from '../Services/clientService';
 
 const LoginPage = () => {
+  
+  const navigate = useNavigate();
+  const { saveToken } = useContext(UserContext);
 
   const OnSubmitted = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
     const userInfo = Object.fromEntries(formData);
-    const {data: {msg, token}} = await login(userInfo);
-    console.log(msg);
-    console.log(token);
+    const {token, error} = await login(userInfo);
+    saveToken(token);
+    if(error) {
+      console.log(error);
+    } else {
+      //console.log(token);
+      navigate('/');
+    }
+
   }
 
   return (
