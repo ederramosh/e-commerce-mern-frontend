@@ -10,3 +10,16 @@ export const login = async (userInfo) => {
         return { error: e.response.data.details }
     }
 }
+
+export const findById = async () => {
+    try {
+        const { data: { details } } = await axios.get(`${url}client/findById`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`,
+            }
+        });
+        return details;
+    } catch (e) {
+        return { error: e.response.data.details }
+    }
+}

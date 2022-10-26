@@ -35,6 +35,22 @@ const Nav = () => {
                 About
               </NavLink>
             </li>
+            {
+              token &&
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/profile">
+                Profile
+              </NavLink>
+            </li>
+            }
+            {
+              token &&
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/logout">
+                Logout
+              </NavLink>
+            </li>
+            }
             {!token && publicRoutes }
           </ul>
         </div>

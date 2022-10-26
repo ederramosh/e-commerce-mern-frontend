@@ -12,14 +12,16 @@ const UserProvider = ({ children }) => {
     // Create the global status with an useState
     const initialState = {
         token: null,
+        rol: null
     }
     const [user, setUser] = useState(initialState);
 
     // Manage the states
-    const saveToken = (newToken) => {
+    const saveToken = (newToken, newRol) => {
         setUser({
             ...user,
             token: newToken,
+            rol: newRol,
         });
         localStorage.setItem("token", newToken);
       }

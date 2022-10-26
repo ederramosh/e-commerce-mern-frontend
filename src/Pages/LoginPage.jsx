@@ -15,12 +15,11 @@ const LoginPage = () => {
 
     const formData = new FormData(e.target);
     const userInfo = Object.fromEntries(formData);
-    const {token, error} = await login(userInfo);
-    saveToken(token);
+    const {token, rol, error} = await login(userInfo);
+    saveToken(token, rol);
     if(error) {
       console.log(error);
     } else {
-      //console.log(token);
       navigate('/');
     }
 
