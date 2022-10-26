@@ -4,8 +4,10 @@ import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 
 const Nav = () => {
-  const { user: { token } } = useContext(UserContext);
-  console.log( `token desde el nav ${token}` );
+  const {
+    user: { token },
+  } = useContext(UserContext);
+  console.log(`token desde el nav ${token}`);
 
   const publicRoutes = [
     <li className="nav-item" key={0}>
@@ -21,41 +23,62 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid">
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About
-              </NavLink>
-            </li>
-            {
-              token &&
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/profile">
-                Profile
-              </NavLink>
-            </li>
-            }
-            {
-              token &&
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/logout">
-                Logout
-              </NavLink>
-            </li>
-            }
-            {!token && publicRoutes }
-          </ul>
+    <>
+    <div className="row container-fluid">
+      <div className="col-8">
+
+      <nav className="navbar navbar-expand-lg background-sub-nav">
+        <div>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/about">
+                  About
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+
       </div>
-    </nav>
+      <div className="col-4 ">
+
+      <nav className="navbar navbar-expand-lg justify-content-end">
+        <div>
+          <div className="collapse navbar-collapse" id="navbarNav ">
+            <ul className="navbar-nav">
+              {token && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/profile">
+                    Profile
+                  </NavLink>
+                </li>
+              )}
+              {token && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/logout">
+                    Logout
+                  </NavLink>
+                </li>
+              )}
+              {!token && publicRoutes}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      </div>
+    </div>
+      
+
+      
+    </>
   );
 };
 
