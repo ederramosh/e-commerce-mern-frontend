@@ -11,6 +11,17 @@ export const login = async (userInfo) => {
     }
 }
 
+export const signUp = async (userInfo) => {
+    try {
+        const { data: { details } } = await axios.post(`${url}client/`, userInfo);
+        console.log('impresion desde el signUp');
+        console.log(details);
+        return details;
+    } catch (e) {
+        return { error: e.response.data.details };
+    }
+}
+
 export const findById = async () => {
     try {
         const { data: { details } } = await axios.get(`${url}client/findById`, {

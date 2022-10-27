@@ -5,9 +5,8 @@ import { UserContext } from "../Context/UserContext";
 
 const Nav = () => {
   const {
-    user: { token },
+    user: { token, firstname, lastname },
   } = useContext(UserContext);
-  console.log(`token desde el nav ${token}`);
 
   const publicRoutes = [
     <li className="nav-item" key={0}>
@@ -56,7 +55,7 @@ const Nav = () => {
               {token && (
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/profile">
-                    Profile
+                    {firstname} {lastname}
                   </NavLink>
                 </li>
               )}

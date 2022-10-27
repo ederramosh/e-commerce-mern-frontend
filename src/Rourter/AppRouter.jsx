@@ -13,8 +13,6 @@ import Logout from '../Components/Logout';
 
 const AppRouter = () => {
   const { user: { token,  rol } } = useContext(UserContext);
-  // const { user: { token } } = useContext(UserContext);
-  console.log(`token desde el app router ${token}`);
   console.log(`rol desde el app router ${rol}`);
   return (
     <BrowserRouter>

@@ -15,8 +15,8 @@ const LoginPage = () => {
 
     const formData = new FormData(e.target);
     const userInfo = Object.fromEntries(formData);
-    const {token, rol, error} = await login(userInfo);
-    saveToken(token, rol);
+    const {token, rol, firstname, lastname, error} = await login(userInfo);
+    saveToken(token, firstname, lastname, rol);
     if(error) {
       console.log(error);
     } else {
