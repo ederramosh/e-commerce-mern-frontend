@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import ProfilePage from '../Pages/ProfilePage';
 import Logout from '../Components/Logout';
+import ItemDetailPage from '../Pages/ItemDetailPage';
 
 const AppRouter = () => {
   const { user: { token,  rol } } = useContext(UserContext);
@@ -33,6 +34,7 @@ const AppRouter = () => {
             { token &&
               <Route path='/logout' element={<Logout />} />
             }
+            <Route path='/item-detail/:id' element={<ItemDetailPage /> } />
             <Route path='*' element={<Navigate to='/' replace />} />
           </Routes>
         </div>
