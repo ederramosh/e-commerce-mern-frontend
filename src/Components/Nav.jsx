@@ -36,6 +36,31 @@ const Nav = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/gamer">
+                  PC Gamer
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/laptop">
+                  Laptop
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/streaming">
+                  Streaming
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/gadgets">
+                  Gadgets
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/refurbished">
+                  Refurbished
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
                   About
                 </NavLink>
@@ -54,8 +79,8 @@ const Nav = () => {
             <ul className="navbar-nav">
               {token && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/profile">
-                    {firstname} {lastname} &nbsp;&nbsp;|
+                  <NavLink className="nav-link" to="/profile">   
+                    {firstname} {lastname}
                   </NavLink>
                 </li>
               )}

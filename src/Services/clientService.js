@@ -34,3 +34,16 @@ export const findById = async () => {
         return { error: e.response.data.details }
     }
 }
+
+export const updateClientInfo = async (body) => {
+    try {
+        const { data: { details } } = await axios.put(`${url}client/updateByEmail`, body , {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`,
+            }
+        });
+        return details;
+    } catch (e) {
+        
+    }
+}

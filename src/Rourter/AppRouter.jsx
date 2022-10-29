@@ -11,6 +11,11 @@ import { UserContext } from "../Context/UserContext";
 import ProfilePage from '../Pages/ProfilePage';
 import Logout from '../Components/Logout';
 import ItemDetailPage from '../Pages/ItemDetailPage';
+import GamerPage from '../Pages/GamerPage';
+import StreamingPage from '../Pages/StreamingPage';
+import GadgetPage from '../Pages/GadgetPage';
+import LaptopPage from '../Pages/LaptopPage';
+import RefurbishedPage from '../Pages/RefurbishedPage';
 
 const AppRouter = () => {
   const { user: { token,  rol } } = useContext(UserContext);
@@ -22,6 +27,11 @@ const AppRouter = () => {
           <Nav />
           <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path='/gamer' element={<GamerPage />} />
+            <Route path='/laptop' element={<LaptopPage />} />
+            <Route path='/streaming' element={<StreamingPage />} />
+            <Route path='/gadgets' element={<GadgetPage />} />
+            <Route path='/refurbished' element={<RefurbishedPage />} />
             { !token &&
               <Route path='/login' element={<LoginPage />} />
             }
@@ -34,7 +44,7 @@ const AppRouter = () => {
             { token &&
               <Route path='/logout' element={<Logout />} />
             }
-            <Route path='/item-detail/:id' element={<ItemDetailPage /> } />
+            <Route path='/item-detail/:id/:type' element={<ItemDetailPage /> } />
             <Route path='*' element={<Navigate to='/' replace />} />
           </Routes>
         </div>

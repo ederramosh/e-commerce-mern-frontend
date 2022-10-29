@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const PrintItem = ({ getItems }) => {
+const PrintItem = ({ getItems, type }) => {
   return (
     <>
       {getItems.map((item, key) => {
@@ -13,7 +13,7 @@ const PrintItem = ({ getItems }) => {
               <p className="card-text">{item.features}</p>
               <p className="card-text fs-5">Precio: ${item.price}</p>
               <div className="text-center">
-              <NavLink to={`/item-detail/${item._id}`} className="btn btn-primary btn-lg my-3">
+              <NavLink to={`/item-detail/${item._id}/${type}`} className="btn btn-primary btn-lg my-3">
                 Ver Articulo
               </NavLink>
               </div>

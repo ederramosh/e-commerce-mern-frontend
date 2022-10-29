@@ -19,7 +19,7 @@ const HomePage = () => {
       <main className="container mt-2">
         <div className="row">
           <h3 className="text-center my-1">New Arrival</h3>
-          <PrintItem getItems={getItems} />
+          <PrintItem getItems={getItems} type={'newArrival'} />
         </div>
       </main>
     </>
