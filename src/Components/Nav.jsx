@@ -86,6 +86,13 @@ const Nav = () => {
               )}
               {token && (
                 <li className="nav-item">
+                  <NavLink className="nav-link" to="/item-list">   
+                    My Cart
+                  </NavLink>
+                </li>
+              )}
+              {token && (
+                <li className="nav-item">
                   <NavLink className="nav-link" to="/logout">
                     Logout
                   </NavLink>

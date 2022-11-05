@@ -14,8 +14,8 @@ const SignUpPage = () => {
 
     const formData = new FormData(e.target);
     const userInfo = Object.fromEntries(formData);
-    const { token, rol, firstname, lastname, error } = await signUp(userInfo);
-    saveToken(token, firstname, lastname, rol);
+    const { token, rol, firstname, lastname, idClient, error } = await signUp(userInfo);
+    saveToken(token, firstname, lastname, rol, idClient);
     if (error) {
       console.log(error);
     } else {

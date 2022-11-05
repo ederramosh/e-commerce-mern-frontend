@@ -16,6 +16,7 @@ import StreamingPage from '../Pages/StreamingPage';
 import GadgetPage from '../Pages/GadgetPage';
 import LaptopPage from '../Pages/LaptopPage';
 import RefurbishedPage from '../Pages/RefurbishedPage';
+import CartPage from '../Pages/CartPage';
 
 const AppRouter = () => {
   const { user: { token,  rol } } = useContext(UserContext);
@@ -43,6 +44,9 @@ const AppRouter = () => {
             }
             { token &&
               <Route path='/logout' element={<Logout />} />
+            }
+            { token &&
+              <Route path='/item-list' element={<CartPage />} />
             }
             <Route path='/item-detail/:id/:type' element={<ItemDetailPage /> } />
             <Route path='*' element={<Navigate to='/' replace />} />

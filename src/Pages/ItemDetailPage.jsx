@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getGadgetsById } from "../Services/gadgetService";
 import { getPCGamerById } from "../Services/gamerService";
 import { getLaptopById } from "../Services/laptopService";
 import { getNewArrivalById } from "../Services/newArrivalService";
 import { getRefurbishedById } from "../Services/refurbishedService";
 import { getStreamingById } from "../Services/streamingService";
+import { useContext } from "react";
+import { UserContext } from "../Context/UserContext";
+import { ItemContext } from "../Context/ItemContext";
+import moment from "moment";
 
 const ItemDetailPage = () => {
+  const {
+    user: { idClient },
+  } = useContext(UserContext);
+
+  const { saveSale } = useContext(ItemContext);
+
   const { id } = useParams();
   const { type } = useParams();
-  console.log(`es un tipo: ${type}`);
   const [item, setItem] = useState({});
 
   useEffect(() => {
@@ -53,7 +62,7 @@ const ItemDetailPage = () => {
       <section>
         <div className="row">
           <div className="col">
-            <h2 className="text-center mb-4">{item.name}</h2>
+            <h2 className="text-center mb-4" name="name">{item.name}</h2>
           </div>
         </div>
         <div className="row">
@@ -69,10 +78,19 @@ const ItemDetailPage = () => {
               <span className="fw-semibold">Descripción:</span> <br />
               {item.features}
             </p>
-            <h3 className=" mb-4">Price: ${item.price}</h3>
-            <NavLink className="btn btn-primary btn-lg my-3">
+            <h3 className=" mb-4" name="price">Price: ${item.price}</h3>
+            <button className="btn btn-primary btn-lg my-3" onClick={() => {
+              saveSale({
+                idClient,
+                date: moment().format(),
+                name: item.name,
+                price: item.price,
+                tax: item.price * 0.13,
+                total: item.price + (item.price * 0.13)
+            })
+            }}>
               Adjuntar carrito
-            </NavLink>
+            </button>
           </div>
         </div>
       </section>

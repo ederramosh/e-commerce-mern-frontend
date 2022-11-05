@@ -15,19 +15,29 @@ const UserProvider = ({ children }) => {
         rol: null,
         firstname: null,
         lastname: null,
+        id: null
     }
     const [user, setUser] = useState(initialState);
 
     // Manage the states
-    const saveToken = (newToken, newFirstname, newLastname, newRol) => {
+    const saveToken = (newToken, newFirstname, newLastname, newRol, newId) => {
+
+        const myUser = {
+            newToken,
+            newFirstname,
+            newLastname,
+            newRol,
+            newId
+        }
         setUser({
             ...user,
             token: newToken,
             rol: newRol,
             firstname: newFirstname,
             lastname: newLastname,
+            idClient: newId,
         });
-        localStorage.setItem("token", newToken);
+        localStorage.setItem("user", JSON.stringify(myUser));
       }
     
       const removeInfoUser = () => {
