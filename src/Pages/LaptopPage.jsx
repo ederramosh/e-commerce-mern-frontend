@@ -16,7 +16,7 @@ const LaptopPage = () => {
   return (
     <>
       <main className="container mt-2">
-        <div className="row">
+        <div className="row text-center main-container">
           <h3 className="text-center my-1">Laptops</h3>
           <PrintItem getItems={getItems} type={'Laptop'} />
         </div>

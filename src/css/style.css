@@ -1,0 +1,11 @@
+.main-container {
+    justify-content: space-evenly;
+}
+
+.item-detail-container {
+    justify-content: center;
+}
+
+.item-detail-description {
+    font-size: 1.5rem;
+}

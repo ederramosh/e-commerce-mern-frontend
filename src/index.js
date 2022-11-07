@@ -5,6 +5,8 @@ import { ItemProvider } from "./Context/ItemContext";
 import { UserProvider } from "./Context/UserContext";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
+import './css/style.css';
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <UserProvider>

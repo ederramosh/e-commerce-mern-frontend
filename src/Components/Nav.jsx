@@ -2,11 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
+import { ItemContext } from "../Context/ItemContext";
 
 const Nav = () => {
   const {
     user: { token, firstname, lastname },
   } = useContext(UserContext);
+
+  const { sale } = useContext(ItemContext);
 
   const publicRoutes = [
     <li className="nav-item" key={0}>
@@ -87,7 +90,7 @@ const Nav = () => {
               {token && (
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/item-list">   
-                    My Cart
+                    My Cart ({sale.length} items)
                   </NavLink>
                 </li>
               )}

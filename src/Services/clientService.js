@@ -24,9 +24,11 @@ export const signUp = async (userInfo) => {
 
 export const findById = async () => {
     try {
+        const user = JSON.parse(localStorage.getItem('user'));
         const { data: { details } } = await axios.get(`${url}client/findById`, {
             headers: {
-                authorization: `Bearer ${localStorage.getItem('token')}`,
+
+                authorization: `Bearer ${user.newToken}`,
             }
         });
         return details;
@@ -37,9 +39,10 @@ export const findById = async () => {
 
 export const updateClientInfo = async (body) => {
     try {
+        const user = JSON.parse(localStorage.getItem('user'));
         const { data: { details } } = await axios.put(`${url}client/updateByEmail`, body , {
             headers: {
-                authorization: `Bearer ${localStorage.getItem('token')}`,
+                authorization: `Bearer ${user.newToken}`,
             }
         });
         return details;

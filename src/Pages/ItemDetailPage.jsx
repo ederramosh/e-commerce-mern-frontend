@@ -20,7 +20,9 @@ const ItemDetailPage = () => {
 
   const { id } = useParams();
   const { type } = useParams();
+
   const [item, setItem] = useState({});
+  const [flag, setFlag] = useState(false);
 
   useEffect(() => {
     let result = {};
@@ -57,40 +59,59 @@ const ItemDetailPage = () => {
     getItemById();
   }, [id, type]);
 
+  const addToCart =() => {
+    saveSale({
+      idClient,
+      date: moment().format(),
+      name: item.name,
+      price: item.price,
+      tax: item.price * 0.13,
+      total: item.price + item.price * 0.13,
+    });
+    setFlag(true);
+    setTimeout(() => {
+      setFlag(false);
+    }, 3000);
+  }
+
   return (
     <>
       <section>
         <div className="row">
           <div className="col">
-            <h2 className="text-center mb-4" name="name">{item.name}</h2>
+            <h2 className="text-center my-4" name="name">
+              {item.name}
+            </h2>
           </div>
         </div>
-        <div className="row">
-          <div className="col-6 mx-5">
+        <div className="row item-detail-container">
+          <div className="col-5 mx-5">
             <img
               src={item.itemImage}
               alt={item.name}
-              style={{ width: "45rem" }}
+              className="img-fluid"
+              style={{ width: "35rem" }}
             />
           </div>
-          <div className="col-4 mx-5">
-            <p className="fs-4 mb-4">
+          <div className="col-5 mx-5">
+            <p className="mb-4 item-detail-description">
               <span className="fw-semibold">Descripción:</span> <br />
               {item.features}
             </p>
-            <h3 className=" mb-4" name="price">Price: ${item.price}</h3>
-            <button className="btn btn-primary btn-lg my-3" onClick={() => {
-              saveSale({
-                idClient,
-                date: moment().format(),
-                name: item.name,
-                price: item.price,
-                tax: item.price * 0.13,
-                total: item.price + (item.price * 0.13)
-            })
-            }}>
+            <h3 className=" mb-4" name="price">
+              Price: ${item.price}
+            </h3>
+            <button
+              className="btn btn-primary btn-lg my-3"
+              onClick={addToCart}
+            >
               Adjuntar carrito
             </button>
+            {flag && (
+              <div className="text-center my-4 py-3 px-3 text-center fs-5 text-white bg-success rounded">
+                {item.name} Agregado al Carrito
+              </div>
+            )}
           </div>
         </div>
       </section>

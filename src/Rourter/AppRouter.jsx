@@ -17,6 +17,7 @@ import GadgetPage from '../Pages/GadgetPage';
 import LaptopPage from '../Pages/LaptopPage';
 import RefurbishedPage from '../Pages/RefurbishedPage';
 import CartPage from '../Pages/CartPage';
+import Footer from '../Components/Footer';
 
 const AppRouter = () => {
   const { user: { token,  rol } } = useContext(UserContext);
@@ -51,6 +52,7 @@ const AppRouter = () => {
             <Route path='/item-detail/:id/:type' element={<ItemDetailPage /> } />
             <Route path='*' element={<Navigate to='/' replace />} />
           </Routes>
+          <Footer />
         </div>
     </BrowserRouter>
   )

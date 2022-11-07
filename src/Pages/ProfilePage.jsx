@@ -3,8 +3,7 @@ import { findById, updateClientInfo } from '../Services/clientService'
 
 const ProfilePage = () => {
     const [infoUser, setInfoUser] = useState({});
-    // const [newValue, setNewValue] = useState({});
-
+    
     useEffect(() => {      
         const getProfileInformation = async () => {
             const data = await findById();
@@ -28,7 +27,6 @@ const ProfilePage = () => {
       setInfoUser( {
           [e.target.name]: e.target.value
         })
-      
     }
 
   return (

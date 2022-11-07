@@ -17,7 +17,7 @@ const GamerPage = () => {
   return (
     <>
       <main className="container mt-2">
-        <div className="row">
+        <div className="row text-center main-container">
           <h3 className="text-center my-1">PC Gamers</h3>
           <PrintItem getItems={getItems} type={'PCGamer'} />
         </div>

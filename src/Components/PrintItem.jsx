@@ -6,7 +6,7 @@ const PrintItem = ({ getItems, type }) => {
     <>
       {getItems.map((item, key) => {
         return (
-          <div className="card col-4 px-3 mx-3 my-3" style={{ width: "18rem" }} key={key}>
+          <div className="card col-4 px-3 mx-3 my-3" style={{ width: "20rem" }} key={key}>
             <img src={item.itemImage} className="card-img-top mt-3" alt="..." />
             <div className="card-body">
               <h5 className="card-title">{item.name}</h5>
