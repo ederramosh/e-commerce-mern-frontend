@@ -99,19 +99,19 @@ const ItemDetailPage = () => {
               {item.features}
             </p>
             <h3 className=" mb-4" name="price">
-              Price: ${item.price}
+              Price: ${item.price.toFixed(2)}
             </h3>
+            {flag && (
+              <div className="text-center my-4 py-3 px-3 text-center fs-5 text-white bg-success rounded">
+                {item.name} Agregado al Carrito
+              </div>
+            )}
             <button
               className="btn btn-primary btn-lg my-3"
               onClick={addToCart}
             >
               Adjuntar carrito
             </button>
-            {flag && (
-              <div className="text-center my-4 py-3 px-3 text-center fs-5 text-white bg-success rounded">
-                {item.name} Agregado al Carrito
-              </div>
-            )}
           </div>
         </div>
       </section>

@@ -16,7 +16,7 @@ const HomePage = () => {
 
   return (
     <>
-      <main className="container mt-2">
+      <main className="container mt-2 ">
         <div className="row text-center main-container">
           <h3 className="text-center my-1">New Arrival</h3>
           <PrintItem getItems={getItems} type={'newArrival'} />

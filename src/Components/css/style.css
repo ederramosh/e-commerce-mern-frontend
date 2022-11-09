@@ -1,7 +1,7 @@
 background-sub-nav {
-    background-color: #ffffff00;
-}
+    background-color: #068bf800;
+ }
 
-background-nav {
-    background-color: aquamarine;
-}
+ ul.navbar-nav {
+    width: 100px;
+ }

@@ -28,10 +28,10 @@ const LoginPage = () => {
 
   return (
     <>
-      <form onSubmit={OnSubmitted}>
+      <form onSubmit={OnSubmitted} className="form-container">
         <div className="row my-3">
           <div className="col">
-            <label htmlFor="email" className="form-label">
+            <label htmlFor="email" className="form-label ">
               Email
             </label>
             <input

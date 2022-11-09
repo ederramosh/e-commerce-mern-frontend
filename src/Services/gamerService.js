@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/v1/';
+const url = `${process.env.REACT_APP_API_KEY}/v1/`;
 
 export const getPCGamer = async () => {
     try {

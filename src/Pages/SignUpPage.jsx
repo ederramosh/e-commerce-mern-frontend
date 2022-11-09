@@ -46,7 +46,7 @@ const SignUpPage = () => {
 
   return (
     <>
-      <form onSubmit={OnSubmitted}>
+      <form onSubmit={OnSubmitted} className="form-container">
         <div className="row my-3">
           <div className="col">
             <label htmlFor="firstname" className="form-label">
