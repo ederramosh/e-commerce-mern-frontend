@@ -99,7 +99,7 @@ const ItemDetailPage = () => {
               {item.features}
             </p>
             <h3 className=" mb-4" name="price">
-              Price: ${item.price.toFixed(2)}
+              Price: ${item.price}
             </h3>
             {flag && (
               <div className="text-center my-4 py-3 px-3 text-center fs-5 text-white bg-success rounded">
