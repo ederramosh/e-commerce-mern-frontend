@@ -5,7 +5,6 @@ import LoginPage from "../Pages/LoginPage";
 import SignUpPge from "../Pages/SignUpPage";
 import AboutPage from "../Pages/AboutPage";
 import Nav from "../Components/Nav";
-import Header from "../Components/Header";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import ProfilePage from "../Pages/ProfilePage";
@@ -26,9 +25,8 @@ const AppRouter = () => {
   console.log(`rol desde el app router ${rol}`);
   return (
     <BrowserRouter>
-      <div className="container">
+      <div className="container shadow py-1">
         <UserNavBar />
-        <Header />
         <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />

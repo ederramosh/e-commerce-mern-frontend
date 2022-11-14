@@ -58,13 +58,13 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="row my-3">
-          <div className="col">
-            <button type="submit" className="btn btn-primary mb-3">
+          <div className="col text-center">
+            <button type="submit" className="btn btn-primary mb-3 px-5">
               Submit
             </button>
           </div>
         </div>
-        <div className="row">
+        <div className="row text-center">
           <span>No tienes cuenta?</span>
           <NavLink to='/signup'>
             Registrate!

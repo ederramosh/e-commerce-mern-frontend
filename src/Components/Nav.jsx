@@ -23,7 +23,7 @@ const Nav = () => {
                 <ul className="navbar-nav">
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active text-light fw-semibold"
                       aria-current="page"
                       to="/"
                     >
@@ -32,7 +32,7 @@ const Nav = () => {
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active text-light fw-semibold"
                       aria-current="page"
                       to="/gamer"
                     >
@@ -41,7 +41,7 @@ const Nav = () => {
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active text-light fw-semibold"
                       aria-current="page"
                       to="/laptop"
                     >
@@ -50,7 +50,7 @@ const Nav = () => {
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active text-light fw-semibold"
                       aria-current="page"
                       to="/streaming"
                     >
@@ -59,7 +59,7 @@ const Nav = () => {
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active text-light fw-semibold"
                       aria-current="page"
                       to="/gadgets"
                     >
@@ -68,7 +68,7 @@ const Nav = () => {
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      className="nav-link active"
+                      className="nav-link active text-light fw-semibold"
                       aria-current="page"
                       to="/refurbished"
                     >
